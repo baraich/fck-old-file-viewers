@@ -1,25 +1,41 @@
 import React from "react";
 import { ImageRenderer } from "./renderers/ImageRenderer";
+import { VideoRenderer } from "./renderers/VideoRenderer";
 
-type IDocumentViewer = React.FC<{
+export type IDocumentViewer = React.FC<{
   fileUrl: string;
   fileName: string;
+
+  config: {
+    props: any;
+  };
 }>;
 
 type DocumentRenderer = Record<string, IDocumentViewer>;
 
 export const DocumentRenderer = {
   png: ImageRenderer,
+  jpg: ImageRenderer,
+  jpeg: ImageRenderer,
+  gif: ImageRenderer,
+  svg: ImageRenderer,
+  webp: ImageRenderer,
+  bmp: ImageRenderer,
+  ico: ImageRenderer,
+
+  mp4: VideoRenderer,
 } as const;
 
 type DocumentViewerProps = {
   fileExt: string;
   fileUrl: string;
   fileName: string;
+  config?: { props: any };
   docRenderer: DocumentRenderer;
 };
 
 export const DocumentViewer: React.FC<DocumentViewerProps> = ({
+  config,
   fileExt,
   fileName,
   fileUrl,
@@ -31,7 +47,18 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
 
   const DocumentViewer: IDocumentViewer = docRenderer[fileExt];
 
-  return !canPreview() ? null : (
-    <DocumentViewer fileUrl={fileUrl} fileName={fileName} />
+  return !canPreview() ? (
+    <p style={{ textTransform: "capitalize" }}>
+      no document viewer found for –{" "}
+      <span style={{ fontWeight: "bold", textTransform: "lowercase" }}>
+        .{fileExt}
+      </span>
+    </p>
+  ) : (
+    <DocumentViewer
+      fileUrl={fileUrl}
+      fileName={fileName}
+      config={config ?? { props: {} }}
+    />
   );
 };

@@ -1,5 +1,3 @@
-export declare const ImageRenderer: React.FC<{
-    fileUrl: string;
-    fileName: string;
-}>;
+import { IDocumentViewer } from "..";
+export declare const ImageRenderer: IDocumentViewer;
 //# sourceMappingURL=ImageRenderer.d.ts.map

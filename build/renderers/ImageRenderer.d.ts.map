@@ -1,1 +1,1 @@
-{"version":3,"file":"ImageRenderer.d.ts","sourceRoot":"","sources":["../../renderers/ImageRenderer.tsx"],"names":[],"mappings":"AAAA,eAAO,MAAM,aAAa,EAAE,KAAK,CAAC,EAAE,CAAC;IAAE,OAAO,EAAE,MAAM,CAAC;IAAC,QAAQ,EAAE,MAAM,CAAA;CAAE,CAGhC,CAAC"}
+{"version":3,"file":"ImageRenderer.d.ts","sourceRoot":"","sources":["../../renderers/ImageRenderer.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,IAAI,CAAC;AAErC,eAAO,MAAM,aAAa,EAAE,eAE3B,CAAC"}

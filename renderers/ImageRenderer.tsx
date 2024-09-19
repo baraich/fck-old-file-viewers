@@ -1,4 +1,5 @@
-export const ImageRenderer: React.FC<{ fileUrl: string; fileName: string }> = ({
-  fileUrl,
-  fileName,
-}) => <img src={fileUrl} alt={fileName} />;
+import { IDocumentViewer } from "..";
+
+export const ImageRenderer: IDocumentViewer = ({ fileUrl, fileName }) => (
+  <img src={fileUrl} alt={fileName} />
+);
