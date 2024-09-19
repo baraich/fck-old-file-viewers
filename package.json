@@ -1,13 +1,24 @@
 {
   "name": "fck-old-file-viewers",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "The following package, aims to resolve the issues with current react file viewers.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "React",
+    "File",
+    "Viewer",
+    "File Viewer",
+    "React File Viewer",
+    "React Viewer",
+    "Document Viewer",
+    "React Document Viewer",
+    "NextJs File Viewer",
+    "Fck File Viewers"
+  ],
+  "author": "Gurvir Singh <gurvirsingh.baraich@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "ts-node": "^10.9.2",
