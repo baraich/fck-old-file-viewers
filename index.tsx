@@ -3,13 +3,10 @@ import { ImageRenderer } from "./renderers/ImageRenderer";
 import { VideoRenderer } from "./renderers/VideoRenderer";
 import { PDFRenderer } from "./renderers/PDFRenderer";
 
-export type IDocumentViewer = React.FC<{
+export type IDocumentViewer<C = any> = React.FC<{
   fileUrl: string;
   fileName: string;
-
-  config: {
-    props: any;
-  };
+  config: C;
 }>;
 
 type DocumentRenderer = Record<string, IDocumentViewer>;

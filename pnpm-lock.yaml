@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@react-pdf-viewer/core':
+        specifier: 3.12.0
+        version: 3.12.0(pdfjs-dist@3.4.120)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      pdfjs-dist:
+        specifier: 3.4.120
+        version: 3.4.120
       react-pdf:
         specifier: ^9.1.1
         version: 9.1.1(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -41,6 +47,13 @@ packages:
   '@mapbox/node-pre-gyp@1.0.11':
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
     hasBin: true
+
+  '@react-pdf-viewer/core@3.12.0':
+    resolution: {integrity: sha512-8MsdlQJ4jaw3GT+zpCHS33nwnvzpY0ED6DEahZg9WngG++A5RMhk8LSlxdHelwaFFHFiXBjmOaj2Kpxh50VQRg==}
+    peerDependencies:
+      pdfjs-dist: ^2.16.105 || ^3.0.279
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
 
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
@@ -280,9 +293,16 @@ packages:
     resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
     engines: {node: '>=0.10.0'}
 
+  path2d-polyfill@2.0.1:
+    resolution: {integrity: sha512-ad/3bsalbbWhmBo0D6FZ4RNMwsLsPpL6gnvhuSaU5Vm7b06Kr5ubSltQQ0T7YKsiJQO+g22zJ4dJKNTXIyOXtA==}
+    engines: {node: '>=8'}
+
   path2d@0.2.1:
     resolution: {integrity: sha512-Fl2z/BHvkTNvkuBzYTpTuirHZg6wW9z8+4SND/3mDTEcYbbNKWAy21dz9D3ePNNwrrK8pqZO5vLPZ1hLF6T7XA==}
     engines: {node: '>=6'}
+
+  pdfjs-dist@3.4.120:
+    resolution: {integrity: sha512-B1hw9ilLG4m/jNeFA0C2A0PZydjxslP8ylU+I4XM7Bzh/xWETo9EiBV848lh0O0hLut7T6lK1V7cpAXv5BhxWw==}
 
   pdfjs-dist@4.4.168:
     resolution: {integrity: sha512-MbkAjpwka/dMHaCfQ75RY1FXX3IewBVu6NGZOcxerRFlaBiIkZmUoR0jotX5VUzYZEXAGzSFtknWs5xRKliXPA==}
@@ -395,6 +415,10 @@ packages:
   warning@4.0.3:
     resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
 
+  web-streams-polyfill@3.3.3:
+    resolution: {integrity: sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==}
+    engines: {node: '>= 8'}
+
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
 
@@ -444,6 +468,12 @@ snapshots:
       - encoding
       - supports-color
     optional: true
+
+  '@react-pdf-viewer/core@3.12.0(pdfjs-dist@3.4.120)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      pdfjs-dist: 3.4.120
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@tsconfig/node10@1.0.11': {}
 
@@ -689,8 +719,20 @@ snapshots:
   path-is-absolute@1.0.1:
     optional: true
 
+  path2d-polyfill@2.0.1: {}
+
   path2d@0.2.1:
     optional: true
+
+  pdfjs-dist@3.4.120:
+    dependencies:
+      path2d-polyfill: 2.0.1
+      web-streams-polyfill: 3.3.3
+    optionalDependencies:
+      canvas: 2.11.2
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
 
   pdfjs-dist@4.4.168:
     optionalDependencies:
@@ -831,6 +873,8 @@ snapshots:
   warning@4.0.3:
     dependencies:
       loose-envify: 1.4.0
+
+  web-streams-polyfill@3.3.3: {}
 
   webidl-conversions@3.0.1:
     optional: true
