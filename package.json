@@ -1,6 +1,6 @@
 {
   "name": "fck-old-file-viewers",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "The following package, aims to resolve the issues with current react file viewers.",
   "main": "build/index.js",
   "exports": {
@@ -10,7 +10,7 @@
     }
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc index.tsx"
   },
   "keywords": [
     "React",

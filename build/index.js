@@ -4,6 +4,7 @@ exports.DocumentViewer = exports.DocumentRenderer = void 0;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const ImageRenderer_1 = require("./renderers/ImageRenderer");
 const VideoRenderer_1 = require("./renderers/VideoRenderer");
+const PDFRenderer_1 = require("./renderers/PDFRenderer");
 exports.DocumentRenderer = {
     png: ImageRenderer_1.ImageRenderer,
     jpg: ImageRenderer_1.ImageRenderer,
@@ -14,6 +15,7 @@ exports.DocumentRenderer = {
     bmp: ImageRenderer_1.ImageRenderer,
     ico: ImageRenderer_1.ImageRenderer,
     mp4: VideoRenderer_1.VideoRenderer,
+    pdf: PDFRenderer_1.PDFRenderer,
 };
 const DocumentViewer = ({ config, fileExt, fileName, fileUrl, docRenderer, }) => {
     const canPreview = () => {

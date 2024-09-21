@@ -8,42 +8,16 @@ export type IDocumentViewer = React.FC<{
 }>;
 type DocumentRenderer = Record<string, IDocumentViewer>;
 export declare const DocumentRenderer: {
-    readonly png: React.FC<{
-        fileUrl: string;
-        fileName: string;
-    }>;
-    readonly jpg: React.FC<{
-        fileUrl: string;
-        fileName: string;
-    }>;
-    readonly jpeg: React.FC<{
-        fileUrl: string;
-        fileName: string;
-    }>;
-    readonly gif: React.FC<{
-        fileUrl: string;
-        fileName: string;
-    }>;
-    readonly svg: React.FC<{
-        fileUrl: string;
-        fileName: string;
-    }>;
-    readonly webp: React.FC<{
-        fileUrl: string;
-        fileName: string;
-    }>;
-    readonly bmp: React.FC<{
-        fileUrl: string;
-        fileName: string;
-    }>;
-    readonly ico: React.FC<{
-        fileUrl: string;
-        fileName: string;
-    }>;
-    readonly mp4: React.FC<{
-        fileUrl: string;
-        fileName: string;
-    }>;
+    readonly png: IDocumentViewer;
+    readonly jpg: IDocumentViewer;
+    readonly jpeg: IDocumentViewer;
+    readonly gif: IDocumentViewer;
+    readonly svg: IDocumentViewer;
+    readonly webp: IDocumentViewer;
+    readonly bmp: IDocumentViewer;
+    readonly ico: IDocumentViewer;
+    readonly mp4: IDocumentViewer;
+    readonly pdf: IDocumentViewer;
 };
 type DocumentViewerProps = {
     fileExt: string;
