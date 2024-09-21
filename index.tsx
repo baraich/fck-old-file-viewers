@@ -1,6 +1,7 @@
 import React from "react";
 import { ImageRenderer } from "./renderers/ImageRenderer";
 import { VideoRenderer } from "./renderers/VideoRenderer";
+import { PDFRenderer } from "./renderers/PDFRenderer";
 
 export type IDocumentViewer = React.FC<{
   fileUrl: string;
@@ -24,6 +25,7 @@ export const DocumentRenderer = {
   ico: ImageRenderer,
 
   mp4: VideoRenderer,
+  pdf: PDFRenderer,
 } as const;
 
 type DocumentViewerProps = {
