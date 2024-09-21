@@ -46,18 +46,22 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
 
   const DocumentViewer: IDocumentViewer = docRenderer[fileExt];
 
-  return !canPreview() ? (
-    <p style={{ textTransform: "capitalize" }}>
-      no document viewer found for –{" "}
-      <span style={{ fontWeight: "bold", textTransform: "lowercase" }}>
-        .{fileExt}
-      </span>
-    </p>
-  ) : (
-    <DocumentViewer
-      fileUrl={fileUrl}
-      fileName={fileName}
-      config={config ?? { props: {} }}
-    />
+  return (
+    <>
+      {!canPreview() ? (
+        <p style={{ textTransform: "capitalize" }}>
+          no document viewer found for –{" "}
+          <span style={{ fontWeight: "bold", textTransform: "lowercase" }}>
+            .{fileExt}
+          </span>
+        </p>
+      ) : (
+        <DocumentViewer
+          fileUrl={fileUrl}
+          fileName={fileName}
+          config={config ?? { props: {} }}
+        />
+      )}
+    </>
   );
 };

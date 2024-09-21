@@ -22,6 +22,6 @@ const DocumentViewer = ({ config, fileExt, fileName, fileUrl, docRenderer, }) =>
         return Object.keys(docRenderer).includes(fileExt);
     };
     const DocumentViewer = docRenderer[fileExt];
-    return !canPreview() ? ((0, jsx_runtime_1.jsxs)("p", { style: { textTransform: "capitalize" }, children: ["no document viewer found for \u2013", " ", (0, jsx_runtime_1.jsxs)("span", { style: { fontWeight: "bold", textTransform: "lowercase" }, children: [".", fileExt] })] })) : ((0, jsx_runtime_1.jsx)(DocumentViewer, { fileUrl: fileUrl, fileName: fileName, config: config !== null && config !== void 0 ? config : { props: {} } }));
+    return ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: !canPreview() ? ((0, jsx_runtime_1.jsxs)("p", { style: { textTransform: "capitalize" }, children: ["no document viewer found for \u2013", " ", (0, jsx_runtime_1.jsxs)("span", { style: { fontWeight: "bold", textTransform: "lowercase" }, children: [".", fileExt] })] })) : ((0, jsx_runtime_1.jsx)(DocumentViewer, { fileUrl: fileUrl, fileName: fileName, config: config !== null && config !== void 0 ? config : { props: {} } })) }));
 };
 exports.DocumentViewer = DocumentViewer;

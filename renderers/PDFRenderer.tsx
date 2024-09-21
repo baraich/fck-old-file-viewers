@@ -10,18 +10,15 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 export const PDFRenderer: IDocumentViewer = ({ fileUrl, config }) => {
   const [numPages, setNumPages] = useState<number>(0);
+  console.log(config);
 
   return (
     <div
       style={{
         width: "100%",
-        maxHeight: "100svh",
-        display: "flex",
-        background: "red",
+        height: "100%",
+        overflow: "scroll",
         overflowX: "hidden",
-        overflowY: "auto",
-        alignItems: "center",
-        justifyContent: "center",
       }}
     >
       <Document
@@ -29,11 +26,12 @@ export const PDFRenderer: IDocumentViewer = ({ fileUrl, config }) => {
           setNumPages(data.numPages);
         }}
         file={
-          "https://cdn.api.baraich.cloud/1726908845Title_The Essential Role of Security Cameras in Enhancing Public Safety.pdf"
+          // "https://cdn.api.baraich.cloud/1726908845Title_The Essential Role of Security Cameras in Enhancing Public Safety.pdf"
+          fileUrl
         }
       >
         {/* @ts-ignore */}
-        {config.showAll ? (
+        {config.props.showAll ? (
           Array.from({ length: numPages }, (_, index) => (
             <Page key={index} pageIndex={index} />
           ))
